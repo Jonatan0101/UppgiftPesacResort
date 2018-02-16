@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  cursor: url('../img/cursor.png'), not-allowed;
 }
 ::selection {
   background-color: rgb(65, 105, 225);
@@ -34,6 +35,8 @@ p {
   color: #fff;
   text-transform: uppercase;
 }
+
+
 .main-header h1 {
   display: block;
   padding-top: 3rem;
@@ -58,6 +61,7 @@ p {
 
 .main-header h2 {
   font-size: 3rem;
+  background-color: rgba(9, 132, 227, 0.6);
 }
 
 /* info-text*/
@@ -167,6 +171,12 @@ footer a {
   font-size: 1.3rem;
   color: #fff;
 }
+
+footer a:hover{
+  transition-duration: 0.1s;
+  transition-delay: 0.4s;
+  opacity: 0.5;
+}
 footer .numemail {
   padding: 1rem;
 }
@@ -213,6 +223,7 @@ footer .numemail * {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(5, auto);
     align-items: center;
+    justify-items: stretch;
     margin: 0.5rem;
   }
   .book-section button{
