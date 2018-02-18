@@ -2,13 +2,17 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  cursor: url("../img/cursor.png"), not-allowed;
+  cursor: url("../img/cursor.png"), not-allowed; /* byter cursor för skojs skull*/
 }
-::selection {
+::selection { /* gör så att det ser lite professionellare tu genom att byta färg på textmarkering*/
   background-color: rgb(20, 40, 99);
   color: #fff;
 }
-body {
+
+html{
+  scroll-behavior: smooth; /* gör så att man inte får ont i ögonen när man trycker på knappen och teleporteras iväg*/
+}
+body { /*sätter font och font-size till 10 px för att göra det lätt att använda rem*/
   font-family: "Roboto", sans-serif;
   font-size: 10px;
 }
@@ -30,14 +34,14 @@ p {
 
 .main-header {
   background: url("../img/hero.jpg");
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-attachment: fixed;   /* lite häftig effekt*/
+  background-position: center; /* blir bra på mindre skärmar*/
+  background-repeat: no-repeat; /* så att det inte blir fel på mindre skärmar*/
   height: 100vh;
   text-align: center;
   color: #fff;
   text-transform: uppercase;
-  animation: scaleRotate 1s ease-out;
+  animation: scaleRotate 1s ease-out; 
 }
 
 .main-header h1 {
@@ -78,17 +82,17 @@ p {
   font-size: 1.5rem;
   margin: 1rem 0.5rem;
 }
-.info h2:after {
+.info h2:after { /* fixar till linjen under titeln med hjälp an :after pseudoklassen*/
   content: "";
   display: block;
   background: #0984e3;
-  width: 70vw;
+  width: 40vw;
   height: 0.2rem;
   margin: 0 auto;
 }
 
 .info img {
-  width: 100vw;
+  width: 100vw; /* så att bilderna är lika breda som skärmen*/
 }
 .info {
   text-align: center;
@@ -99,7 +103,7 @@ p {
 .activity {
   text-align: center;
   margin: 0;
-  overflow: hidden;
+  overflow: hidden; /* så att det inte blir så att man kan scrolla åt sidan, för det ser fruktansvärt ut*/
 }
 .activityimg {
   padding: 0;
@@ -155,7 +159,6 @@ p {
   padding: 1rem;
 }
 .book-section button:hover {
-  cursor: pointer;
   background-color: #05487a;
   transition-duration: 0.2s;
 }
@@ -189,7 +192,7 @@ footer .numemail {
 footer .numemail * {
   margin: 0.3rem;
 }
-@keyframes scaleRotate {
+@keyframes scaleRotate { /* animerar header-bilden så att det ser kul ut*/
   0% {
     transform: scale(0) rotate(600deg);
   }
@@ -197,7 +200,7 @@ footer .numemail * {
     transform: scale(1) rotate(0deg);
   }
 }
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 480px) { /* media queries för skärmar större än telefefoner, mest för att inte headern ska bli ful*/
   .main-header a {
     position: absolute;
     margin: 0;
@@ -216,12 +219,16 @@ footer .numemail * {
   }
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 800px) { /* media queries för allt annat än telefoner och tablets*/
   .main-header h1 {
     font-size: 6rem;
   }
   .main-header h2 {
     font-size: 3.5rem;
+  }
+  .info{
+    width: 50%;
+    margin: 1rem auto;
   }
   .info h2:after {
     content: "";
@@ -239,11 +246,11 @@ footer .numemail * {
   }
   /* aktiviteter */
   .activity img {
-    width: 100%;
-    border-radius: 1rem;
+    width: 100%; /* bilderna blir deras normala storlek*/
+    border-radius: 1rem; /* mjukar till kanterna lite*/
   }
   .activity {
-    display: flex;
+    display: flex; /* flexbox för att kunna vända på varannan sektion*/
     flex-direction: row;
     align-items: center;
     padding: 2rem;
@@ -269,11 +276,11 @@ footer .numemail * {
     margin: 0.5rem;
   }
   .book-section .book-form {
-    display: grid;
+    display: grid; /* försöker få till en grid så att man kan placera inputen rätt*/
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(6, auto);
     align-items: center;
-    justify-items: startA;
+    justify-items: end;
     margin: 0.5rem;
     
   }
