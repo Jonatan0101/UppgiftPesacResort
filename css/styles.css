@@ -254,6 +254,19 @@ footer .numemail * {
     flex-direction: row;
     align-items: center;
     padding: 2rem;
+    margin: 0 auto;
+    justify-items: center;
+  }
+  .activity .activity-text{
+    width: 50%;
+    justify-self: center;
+  }
+  .activityimg{
+    width: 40%;
+  }
+  .activity img{
+    width: 100%;
+    margin: 0;
   }
   .activity:nth-child(odd) {
     /* flyttar på bilden på varannan sektion */
